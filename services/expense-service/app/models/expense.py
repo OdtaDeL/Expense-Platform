@@ -7,4 +7,4 @@ class Expense(Base):
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String, nullable=False)
     amount = Column(Float, nullable=False)
-    owner_email = Column(String, nullable=False)
+    user_id = Column(Integer, nullable=False)  

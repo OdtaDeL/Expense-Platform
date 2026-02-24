@@ -1,8 +1,10 @@
 from fastapi import FastAPI
-from app.database import Base, engine
+from app.database import engine, Base
 from app.routers import expense
-
-#Base.metadata.create_all(bind=engine)
+from app.models import expense as expense_model  # để tạo table
 
 app = FastAPI()
+
+Base.metadata.create_all(bind=engine)
+
 app.include_router(expense.router)
